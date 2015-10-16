@@ -496,6 +496,9 @@ public class MainActivity extends Activity
         //get participants and my ID:
         mParticipants = room.getParticipants();
         mMyId = room.getParticipantId(Games.Players.getCurrentPlayerId(mGoogleApiClient));
+        
+        // save room ID so we can leave cleanly before the game starts.
+        mRoomId = room.getRoomId();
 
         // print out the list of participants (for debug purposes)
         Log.d(TAG, "Room ID: " + mRoomId);
